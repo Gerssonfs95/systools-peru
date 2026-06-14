@@ -1,11 +1,7 @@
 import Script from "next/script";
 
 export function GoogleAdSense() {
-  const publisherId = process.env.NEXT_PUBLIC_ADSENSE_ID;
-
-  if (!publisherId) {
-    return null;
-  }
+  const publisherId = process.env.NEXT_PUBLIC_ADSENSE_ID || "ca-pub-3834473332305596";
 
   return (
     <Script

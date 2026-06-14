@@ -27,3 +27,14 @@ export async function getPost(slug: string) {
   }
   return demoPosts.find((post) => post.slug === slug) ?? null;
 }
+
+export async function getTool(slug: string) {
+  if (configured()) {
+    try {
+      const supabase = await createClient();
+      const { data } = await supabase.from("tools").select("*").eq("slug", slug).eq("published", true).single();
+      if (data) return data as Tool;
+    } catch {}
+  }
+  return demoTools.find((tool) => tool.slug === slug) ?? null;
+}

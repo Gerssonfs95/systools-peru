@@ -7,6 +7,7 @@ export const demoSystems: System[] = [
   { id:"s3", name:"Panel de Redes", slug:"panel-redes", description:"Monitoreo centralizado y visual para tu infraestructura tecnológica.", version:"1.2", image_url:"https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80", download_url:"#", category:"Redes", published:true, created_at:date },
 ];
 export const demoTools: Tool[] = [
+  { id:"t0", name:"Calculadora de margen de ganancia", slug:"calculadora-margen-ganancia", description:"Calcula la ganancia, el margen y la rentabilidad de tus productos.", icon:"Calculator", category:"Negocios", published:true, created_at:date },
   { id:"t1", name:"Calculadora de subredes", slug:"calculadora-subredes", description:"Planifica redes IPv4 de forma sencilla.", icon:"Network", category:"Redes", published:true, created_at:date },
   { id:"t2", name:"Generador de contraseñas", slug:"generador-contrasenas", description:"Crea contraseñas seguras y personalizadas.", icon:"KeyRound", category:"Seguridad", published:true, created_at:date },
   { id:"t3", name:"Calculadora de IGV", slug:"calculadora-igv", description:"Calcula montos e IGV para tus operaciones.", icon:"Calculator", category:"Negocios", published:true, created_at:date },

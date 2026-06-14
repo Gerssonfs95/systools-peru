@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
-import { getPosts, getSystems } from "@/lib/data";
+import { getPosts, getSystems, getTools } from "@/lib/data";
 import { getSiteUrl } from "@/lib/site-url";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [posts, systems] = await Promise.all([getPosts(), getSystems()]);
+  const [posts, systems, tools] = await Promise.all([getPosts(), getSystems(), getTools()]);
   const siteUrl = getSiteUrl();
   const now = new Date();
 
@@ -24,6 +24,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...systems.map((system) => ({
       url: `${siteUrl}/sistemas/${system.slug}`,
       lastModified: new Date(system.created_at),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...tools.map((tool) => ({
+      url: `${siteUrl}/herramientas/${tool.slug}`,
+      lastModified: new Date(tool.created_at),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

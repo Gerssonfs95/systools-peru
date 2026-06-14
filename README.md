@@ -45,8 +45,25 @@ Las descargas no se guardan en Netlify ni en Supabase Storage.
 1. Sube el proyecto a un repositorio Git.
 2. En Netlify, selecciona **Add new site > Import an existing project**.
 3. El repositorio ya incluye `netlify.toml` con el comando `npm run build`.
-4. Agrega `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_ANON_KEY` en **Site configuration > Environment variables**.
+4. Agrega las variables del proyecto en **Site configuration > Environment variables**:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-clave-anon
+NEXT_PUBLIC_SITE_URL=https://tu-dominio.netlify.app
+NEXT_PUBLIC_GA_ID=G-Z6RF6G5EVD
+```
+
 5. Publica el sitio.
+
+## Google Analytics 4
+
+Google Analytics se carga en todas las páginas mediante `components/google-analytics.tsx`.
+El componente usa `next/script` con la estrategia `afterInteractive`, evitando bloquear la
+carga inicial o producir errores de hidratación.
+
+Para producción, configura `NEXT_PUBLIC_GA_ID` en Netlify y realiza un nuevo despliegue.
+Después comprueba las visitas desde **Google Analytics > Informes > En tiempo real**.
 
 ## Comandos
 

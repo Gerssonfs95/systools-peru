@@ -52,6 +52,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-clave-anon
 NEXT_PUBLIC_SITE_URL=https://tu-dominio.netlify.app
 NEXT_PUBLIC_GA_ID=G-Z6RF6G5EVD
+NEXT_PUBLIC_ADSENSE_ID=ca-pub-3834473332305596
 ```
 
 5. Publica el sitio.
@@ -64,6 +65,15 @@ carga inicial o producir errores de hidratación.
 
 Para producción, configura `NEXT_PUBLIC_GA_ID` en Netlify y realiza un nuevo despliegue.
 Después comprueba las visitas desde **Google Analytics > Informes > En tiempo real**.
+
+## Google AdSense
+
+Google AdSense se carga globalmente mediante `components/google-adsense.tsx`. El script usa
+`next/script` con la estrategia `afterInteractive`, por lo que es compatible con App Router,
+Netlify y la hidratación de React.
+
+Para producción, configura `NEXT_PUBLIC_ADSENSE_ID` en Netlify y realiza un nuevo despliegue.
+La cuenta y el sitio deben estar aprobados en AdSense antes de que aparezcan anuncios.
 
 ## Comandos
 

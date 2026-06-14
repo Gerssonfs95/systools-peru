@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getPosts, getSystems } from "@/lib/data";
-
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://systoolsperu.netlify.app").replace(/\/$/, "");
+import { getSiteUrl } from "@/lib/site-url";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, systems] = await Promise.all([getPosts(), getSystems()]);
+  const siteUrl = getSiteUrl();
   const now = new Date();
 
   return [

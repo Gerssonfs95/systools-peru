@@ -1,0 +1,12 @@
+node_modules
+.next
+.env
+.env.local
+out
+.netlify
+npm-debug.log*
+.npm-cache
+.dev-server.log
+.dev-server-error.log
+.git/
+.git-local/

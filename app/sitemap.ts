@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getPosts, getSystems } from "@/lib/data";
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://systools-peru.netlify.app").replace(/\/$/, "");
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://systoolsperu.netlify.app").replace(/\/$/, "");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, systems] = await Promise.all([getPosts(), getSystems()]);

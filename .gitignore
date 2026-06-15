@@ -5,6 +5,7 @@ node_modules
 !.env.example
 out
 .netlify
+.netlify-appdata
 npm-debug.log*
 .npm-cache
 .dev-server.log

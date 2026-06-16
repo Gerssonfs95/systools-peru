@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import { ArrowLeft, Clock3 } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CvPdfGenerator } from "@/components/cv-pdf-generator";
 import { DrywallCalculator } from "@/components/drywall-calculator";
 import { ElectricityConsumptionCalculator } from "@/components/electricity-consumption-calculator";
 import { IgvCalculator } from "@/components/igv-calculator";
@@ -8,6 +10,7 @@ import { LoanCalculator } from "@/components/loan-calculator";
 import { PasswordGenerator } from "@/components/password-generator";
 import { PcPowerSupplyCalculator } from "@/components/pc-power-supply-calculator";
 import { ProfitMarginCalculator } from "@/components/profit-margin-calculator";
+import { QuotePdfGenerator } from "@/components/quote-pdf-generator";
 import { getTool } from "@/lib/data";
 
 const functionalTools: Record<string, React.ReactNode> = {
@@ -17,8 +20,26 @@ const functionalTools: Record<string, React.ReactNode> = {
   "calculadora-margen-ganancia": <ProfitMarginCalculator />,
   "calculadora-prestamos": <LoanCalculator />,
   "generador-contrasenas": <PasswordGenerator />,
+  "generador-cotizaciones-pdf": <QuotePdfGenerator />,
+  "generador-cv-pdf": <CvPdfGenerator />,
   "calculadora-fuente-pc": <PcPowerSupplyCalculator />,
 };
+
+const seoBySlug: Record<string, Metadata> = {
+  "generador-cotizaciones-pdf": {
+    title: "Generador de Cotizaciones PDF Gratis | SysTools Perú",
+    description: "Crea cotizaciones profesionales gratis desde tu navegador y descárgalas en PDF.",
+  },
+  "generador-cv-pdf": {
+    title: "Generador de CV PDF Gratis | SysTools Perú",
+    description: "Crea tu currículum vitae profesional gratis desde tu navegador y descárgalo en PDF.",
+  },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  return seoBySlug[slug] ?? {};
+}
 
 export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

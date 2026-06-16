@@ -7,6 +7,8 @@ export const demoSystems: System[] = [
   { id:"s3", name:"Panel de Redes", slug:"panel-redes", description:"Monitoreo centralizado y visual para tu infraestructura tecnológica.", version:"1.2", image_url:"https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80", download_url:"#", category:"Redes", published:true, created_at:date },
 ];
 export const demoTools: Tool[] = [
+  { id:"t11", name:"Generador de Currículum Vitae PDF", slug:"generador-cv-pdf", description:"Crea tu currículum profesional y descárgalo en PDF desde el navegador.", icon:"Calculator", category:"Empleo", published:true, created_at:date },
+  { id:"t10", name:"Generador de Cotizaciones PDF", slug:"generador-cotizaciones-pdf", description:"Crea cotizaciones profesionales gratis y descárgalas en PDF desde tu navegador.", icon:"Calculator", category:"Negocios", published:true, created_at:date },
   { id:"t9", name:"Calculadora de IGV Perú", slug:"calculadora-igv-peru", description:"Agrega o separa el IGV de un precio usando la tasa general del 18%.", icon:"Percent", category:"Negocios", published:true, created_at:date },
   { id:"t8", name:"Calculadora de Consumo Eléctrico", slug:"calculadora-consumo-electrico", description:"Calcula el consumo eléctrico y costo estimado de tus equipos.", icon:"Gauge", category:"Utilidades", published:true, created_at:date },
   { id:"t7", name:"Calculadora de Drywall", slug:"calculadora-drywall", description:"Estima planchas, parantes, rieles y tornillos para una pared de drywall.", icon:"Calculator", category:"Construcción", published:true, created_at:date },
